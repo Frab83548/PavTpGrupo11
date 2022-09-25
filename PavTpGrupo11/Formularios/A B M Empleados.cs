@@ -26,7 +26,7 @@ namespace PavTpGrupo11.Formularios
 
         private void frmABM_EMPLEADOS_Load(object sender, EventArgs e)
         {
-           // GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+            GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
         }
 
 
@@ -37,6 +37,19 @@ namespace PavTpGrupo11.Formularios
             cn.InsertarUsuario(txtCodigoEMPLEADO.Text, txtNombre.Text, txttelefonoE.Text,txtDocumento.Text,txtCalle.Text,txtCalleNRO.Text,txtBarrio.Text);
             GrillaEmpleados.DataSource =  cn.ConsultarUsuariosDG();
            
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            cn.EliminarEmpleado(txtCodigoEMPLEADO.Text);
+            GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            cn.ModificarEmpleado(txtCodigoEMPLEADO.Text, txtNombre.Text, txttelefonoE.Text, txtDocumento.Text, txtCalle.Text, txtCalleNRO.Text, txtBarrio.Text);
+            GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
         }
     }
         }

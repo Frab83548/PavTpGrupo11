@@ -53,6 +53,31 @@ namespace PavTpGrupo11.AccesoADatos
                
             
         }
+        public int  EliminarEmpleado(string cod)
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "DELETE FROM Empleados WHERE Cod_Empleado = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+        }
+        public int ModificarEmpleado(string cod, string nom, string tel, string doc, string calle, string nro, string barrio)
+
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "UPDATE Empleados SET Nombre = '" + nom + "' Telefono =  '" + tel + "' Documento = '" + doc + "' calle =  '" + calle + "' nro_calle =  '" + nro + "' id_barrio = '" + barrio + "' where Cod_Empleado = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+
+        }
 
         public int InsertarBarrio(string id, string nom)
 
@@ -68,6 +93,36 @@ namespace PavTpGrupo11.AccesoADatos
 
 
         }
+
+        public int ModificarBarrio( string dni, string nom)
+
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "UPDATE Barrios SET nombre_barrio = '" + nom + "' where id_barrio = '" + dni + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+
+        }
+        public int EliminarBarrio(string id)
+
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "DELETE FROM Barrios WHERE id_barrio = '" + id + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+
+        }
+
 
     }
 }

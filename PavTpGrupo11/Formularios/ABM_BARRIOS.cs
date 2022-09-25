@@ -24,6 +24,8 @@ namespace PavTpGrupo11.Formularios
 
         private void ABM_BARRIOS_Load(object sender, EventArgs e)
         {
+            grillaBarrios.DataSource = cn.ConsultarBarriosDG();
+
 
         }
 
@@ -31,6 +33,19 @@ namespace PavTpGrupo11.Formularios
         {
             cn.InsertarBarrio(txtBarrio.Text, txtNombreBarrio.Text);
             grillaBarrios.DataSource = cn.ConsultarBarriosDG();
+        }
+
+        private void btnModificarB_Click(object sender, EventArgs e)
+        {
+            cn.ModificarBarrio(txtBarrio.Text, txtNombreBarrio.Text);
+            grillaBarrios.DataSource = cn.ConsultarBarriosDG();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            cn.EliminarBarrio(txtBarrio.Text);
+            grillaBarrios.DataSource = cn.ConsultarBarriosDG();
+
         }
     }
 }

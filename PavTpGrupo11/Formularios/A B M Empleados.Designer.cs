@@ -206,6 +206,7 @@ namespace PavTpGrupo11.Formularios
             this.BtnModificar.TabIndex = 38;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnBorrar
             // 
@@ -215,6 +216,7 @@ namespace PavTpGrupo11.Formularios
             this.btnBorrar.TabIndex = 39;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // frmABM_EMPLEADOS
             // 
