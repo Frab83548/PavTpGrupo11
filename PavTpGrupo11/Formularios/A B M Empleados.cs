@@ -51,6 +51,11 @@ namespace PavTpGrupo11.Formularios
             cn.ModificarEmpleado(txtCodigoEMPLEADO.Text, txtNombre.Text, txttelefonoE.Text, txtDocumento.Text, txtCalle.Text, txtCalleNRO.Text, txtBarrio.Text);
             GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
         }
     

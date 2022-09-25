@@ -29,104 +29,91 @@ namespace PavTpGrupo11.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBarrio = new System.Windows.Forms.TextBox();
-            this.txtNombreBarrio = new System.Windows.Forms.MaskedTextBox();
-            this.grillaBarrios = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnModificarB = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grillaBarrios)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnAgregarB = new System.Windows.Forms.Button();
+            this.btnModificarBarrio = new System.Windows.Forms.Button();
+            this.btnElimarB = new System.Windows.Forms.Button();
+            this.TxtIDBarrio = new System.Windows.Forms.TextBox();
+            this.txtNombreB = new System.Windows.Forms.TextBox();
+            this.GrillaBarrio = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaBarrio)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBarrio
+            // pictureBox2
             // 
-            this.txtBarrio.Location = new System.Drawing.Point(221, 66);
-            this.txtBarrio.Name = "txtBarrio";
-            this.txtBarrio.Size = new System.Drawing.Size(198, 20);
-            this.txtBarrio.TabIndex = 0;
+            this.pictureBox2.Image = global::PavTpGrupo11.Properties.Resources.barrio;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(201, 152);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
-            // txtNombreBarrio
+            // BtnAgregarB
             // 
-            this.txtNombreBarrio.Location = new System.Drawing.Point(221, 112);
-            this.txtNombreBarrio.Name = "txtNombreBarrio";
-            this.txtNombreBarrio.Size = new System.Drawing.Size(198, 20);
-            this.txtNombreBarrio.TabIndex = 1;
+            this.BtnAgregarB.Location = new System.Drawing.Point(71, 325);
+            this.BtnAgregarB.Name = "BtnAgregarB";
+            this.BtnAgregarB.Size = new System.Drawing.Size(122, 31);
+            this.BtnAgregarB.TabIndex = 1;
+            this.BtnAgregarB.Text = "Agregar";
+            this.BtnAgregarB.UseVisualStyleBackColor = true;
+            this.BtnAgregarB.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // grillaBarrios
+            // btnModificarBarrio
             // 
-            this.grillaBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaBarrios.Location = new System.Drawing.Point(69, 171);
-            this.grillaBarrios.Name = "grillaBarrios";
-            this.grillaBarrios.Size = new System.Drawing.Size(560, 160);
-            this.grillaBarrios.TabIndex = 2;
+            this.btnModificarBarrio.Location = new System.Drawing.Point(238, 325);
+            this.btnModificarBarrio.Name = "btnModificarBarrio";
+            this.btnModificarBarrio.Size = new System.Drawing.Size(122, 31);
+            this.btnModificarBarrio.TabIndex = 2;
+            this.btnModificarBarrio.Text = "Modificar";
+            this.btnModificarBarrio.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnElimarB
             // 
-            this.button1.Location = new System.Drawing.Point(29, 370);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 48);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnElimarB.Location = new System.Drawing.Point(386, 312);
+            this.btnElimarB.Name = "btnElimarB";
+            this.btnElimarB.Size = new System.Drawing.Size(122, 31);
+            this.btnElimarB.TabIndex = 3;
+            this.btnElimarB.Text = "Eliminar";
+            this.btnElimarB.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // TxtIDBarrio
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Codigo Barrio:";
+            this.TxtIDBarrio.Location = new System.Drawing.Point(344, 74);
+            this.TxtIDBarrio.Name = "TxtIDBarrio";
+            this.TxtIDBarrio.Size = new System.Drawing.Size(164, 20);
+            this.TxtIDBarrio.TabIndex = 4;
             // 
-            // label2
+            // txtNombreB
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(137, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Nombre:";
+            this.txtNombreB.Location = new System.Drawing.Point(344, 117);
+            this.txtNombreB.Name = "txtNombreB";
+            this.txtNombreB.Size = new System.Drawing.Size(164, 20);
+            this.txtNombreB.TabIndex = 5;
             // 
-            // btnModificarB
+            // GrillaBarrio
             // 
-            this.btnModificarB.Location = new System.Drawing.Point(221, 370);
-            this.btnModificarB.Name = "btnModificarB";
-            this.btnModificarB.Size = new System.Drawing.Size(159, 48);
-            this.btnModificarB.TabIndex = 6;
-            this.btnModificarB.Text = "Modificar";
-            this.btnModificarB.UseVisualStyleBackColor = true;
-            this.btnModificarB.Click += new System.EventHandler(this.btnModificarB_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(404, 370);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(159, 48);
-            this.btnBorrar.TabIndex = 7;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            this.GrillaBarrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaBarrio.Location = new System.Drawing.Point(78, 181);
+            this.GrillaBarrio.Name = "GrillaBarrio";
+            this.GrillaBarrio.Size = new System.Drawing.Size(282, 113);
+            this.GrillaBarrio.TabIndex = 6;
             // 
             // ABM_BARRIOS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.btnModificarB);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.grillaBarrios);
-            this.Controls.Add(this.txtNombreBarrio);
-            this.Controls.Add(this.txtBarrio);
+            this.ClientSize = new System.Drawing.Size(704, 406);
+            this.Controls.Add(this.GrillaBarrio);
+            this.Controls.Add(this.txtNombreB);
+            this.Controls.Add(this.TxtIDBarrio);
+            this.Controls.Add(this.btnElimarB);
+            this.Controls.Add(this.btnModificarBarrio);
+            this.Controls.Add(this.BtnAgregarB);
+            this.Controls.Add(this.pictureBox2);
             this.Name = "ABM_BARRIOS";
-            this.Text = "ABM_BARRIOS";
-            this.Load += new System.EventHandler(this.ABM_BARRIOS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grillaBarrios)).EndInit();
+            this.Load += new System.EventHandler(this.ABM_BARRIOS_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaBarrio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,10 +124,19 @@ namespace PavTpGrupo11.Formularios
         private System.Windows.Forms.TextBox txtBarrio;
         private System.Windows.Forms.MaskedTextBox txtNombreBarrio;
         private System.Windows.Forms.DataGridView grillaBarrios;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnModificarB;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button BtnAgregarB;
+        private System.Windows.Forms.Button btnModificarBarrio;
+        private System.Windows.Forms.Button btnElimarB;
+        private System.Windows.Forms.TextBox TxtIDBarrio;
+        private System.Windows.Forms.TextBox txtNombreB;
+        private System.Windows.Forms.DataGridView GrillaBarrio;
     }
 }

@@ -24,27 +24,92 @@ namespace PavTpGrupo11.Formularios
 
         private void ABM_BARRIOS_Load(object sender, EventArgs e)
         {
-            grillaBarrios.DataSource = cn.ConsultarBarriosDG();
+            GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
 
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cn.InsertarBarrio(txtBarrio.Text, txtNombreBarrio.Text);
+
+            
+        }
+
+        
+private void ABM_BARRIOS_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (txtBarrio.Text.Equals("") || txtNombreBarrio.Text.Equals(""))
+            {
+                MessageBox.Show("Debe ingresar todos los campos obligatorios para dar de alta al empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                try
+                {
+                    bool resultado = cn.InsertarBarrio(txtBarrio.Text, txtNombreBarrio.Text);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Barrio dado de alta correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+            }
+
             grillaBarrios.DataSource = cn.ConsultarBarriosDG();
         }
 
         private void btnModificarB_Click(object sender, EventArgs e)
         {
-            cn.ModificarBarrio(txtBarrio.Text, txtNombreBarrio.Text);
-            grillaBarrios.DataSource = cn.ConsultarBarriosDG();
-        }
+            if (TxtIDBarrio.Text.Equals("") || txtNombreB.Text.Equals(""))
+            {
+                MessageBox.Show("Debe ingresar todos los campos obligatorios para dar de alta al empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        private void btnBorrar_Click(object sender, EventArgs e)
+            }
+            else
+            {
+                try
+                {
+                    bool resultado = cn.InsertarBarrio(TxtIDBarrio.Text, txtNombreB.Text);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Barrio dado de alta correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+            }
+
+            GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
+        }
+    }
+
+    private void btnBorrar_Click(object sender, EventArgs e)
         {
             cn.EliminarBarrio(txtBarrio.Text);
             grillaBarrios.DataSource = cn.ConsultarBarriosDG();
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void txtBarrio_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

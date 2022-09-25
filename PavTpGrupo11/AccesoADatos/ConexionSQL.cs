@@ -79,31 +79,58 @@ namespace PavTpGrupo11.AccesoADatos
 
         }
 
-        public int InsertarBarrio(string id, string nom)
+        public bool InsertarBarrio(string id, string nom)
 
         {
-            int flag = 0;
-            conexion.Open();
-            string query = "insert into Barrios(id_barrio, nombre_barrio) values('" + id + "', '" + nom + "')";
+            bool resultado = false;
 
-            SqlCommand cmd = new SqlCommand(query, conexion);
-            flag = cmd.ExecuteNonQuery();
-            conexion.Close();
-            return flag;
+            try
+            {
+                conexion.Open();
+                string query = "insert into Barrios(id_barrio, nombre_barrio) values('" + id + "', '" + nom + "')";
 
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                
+                resultado= true;
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return resultado;
         }
 
-        public int ModificarBarrio( string dni, string nom)
+        public bool ModificarBarrio( string dni, string nom)
 
         {
-            int flag = 0;
-            conexion.Open();
-            string query = "UPDATE Barrios SET nombre_barrio = '" + nom + "' where id_barrio = '" + dni + "'";
+            bool flag = false;
+            try
+            {
+                conexion.Open();
+                string query = "UPDATE Barrios SET nombre_barrio = '" + nom + "' where id_barrio = '" + dni + "'";
 
-            SqlCommand cmd = new SqlCommand(query, conexion);
-            flag = cmd.ExecuteNonQuery();
-            conexion.Close();
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.ExecuteNonQuery();
+                
+                flag = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            
             return flag;
 
 

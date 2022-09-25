@@ -42,12 +42,12 @@ namespace PavTpGrupo11.AccesoADatos
             return cn.ConsultarBarriosDG();
         }
 
-        public int InsertarBarrio(string id, string nom)
+        public bool InsertarBarrio(string id, string nom)
         {
             return cn.InsertarBarrio(id, nom);
         }
 
-        public int ModificarBarrio(string dni, string nom)
+        public bool ModificarBarrio(string dni, string nom)
         {
             return cn.ModificarBarrio(dni, nom);
         }
