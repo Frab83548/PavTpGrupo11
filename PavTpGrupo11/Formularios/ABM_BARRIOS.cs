@@ -24,7 +24,7 @@ namespace PavTpGrupo11.Formularios
 
         private void ABM_BARRIOS_Load(object sender, EventArgs e)
         {
-            GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
+            
 
 
         }
@@ -38,12 +38,12 @@ namespace PavTpGrupo11.Formularios
         
 private void ABM_BARRIOS_Load_1(object sender, EventArgs e)
         {
-
+            GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (txtBarrio.Text.Equals("") || txtNombreBarrio.Text.Equals(""))
+            if (TxtIDBarrio.Text.Equals("") || txtNombreB.Text.Equals(""))
             {
                 MessageBox.Show("Debe ingresar todos los campos obligatorios para dar de alta al empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -52,7 +52,7 @@ private void ABM_BARRIOS_Load_1(object sender, EventArgs e)
             {
                 try
                 {
-                    bool resultado = cn.InsertarBarrio(txtBarrio.Text, txtNombreBarrio.Text);
+                    bool resultado = cn.InsertarBarrio(TxtIDBarrio.Text, txtNombreB.Text);
                     if (resultado)
                     {
                         MessageBox.Show("Barrio dado de alta correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -60,12 +60,12 @@ private void ABM_BARRIOS_Load_1(object sender, EventArgs e)
                 }
                 catch (Exception ex)
                 {
-
-                    throw;
+                    MessageBox.Show("Ese barrio existe", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                   
                 }
             }
 
-            grillaBarrios.DataSource = cn.ConsultarBarriosDG();
+            GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
         }
 
         private void btnModificarB_Click(object sender, EventArgs e)
@@ -94,23 +94,39 @@ private void ABM_BARRIOS_Load_1(object sender, EventArgs e)
 
             GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
         }
+
+        private void btnModificarBarrio_Click(object sender, EventArgs e)
+        {
+            if (TxtIDBarrio.Text.Equals("") || txtNombreB.Text.Equals(""))
+            {
+                MessageBox.Show("Debe ingresar todos los campos obligatorios para dar de alta al empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                try
+                {
+                    bool resultado = cn.ModificarBarrio(TxtIDBarrio.Text, txtNombreB.Text);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Se ha modificado el barrio", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                    MessageBox.Show("Ese barrio no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
+        }
     }
 
-    private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            cn.EliminarBarrio(txtBarrio.Text);
-            grillaBarrios.DataSource = cn.ConsultarBarriosDG();
+  
 
-        }
+       
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        private void txtBarrio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
-}
+

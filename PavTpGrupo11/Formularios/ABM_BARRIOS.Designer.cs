@@ -36,6 +36,8 @@ namespace PavTpGrupo11.Formularios
             this.TxtIDBarrio = new System.Windows.Forms.TextBox();
             this.txtNombreB = new System.Windows.Forms.TextBox();
             this.GrillaBarrio = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBarrio)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +54,9 @@ namespace PavTpGrupo11.Formularios
             // 
             // BtnAgregarB
             // 
-            this.BtnAgregarB.Location = new System.Drawing.Point(71, 325);
+            this.BtnAgregarB.Image = global::PavTpGrupo11.Properties.Resources.agregar_usuario;
+            this.BtnAgregarB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAgregarB.Location = new System.Drawing.Point(45, 339);
             this.BtnAgregarB.Name = "BtnAgregarB";
             this.BtnAgregarB.Size = new System.Drawing.Size(122, 31);
             this.BtnAgregarB.TabIndex = 1;
@@ -62,16 +66,21 @@ namespace PavTpGrupo11.Formularios
             // 
             // btnModificarBarrio
             // 
-            this.btnModificarBarrio.Location = new System.Drawing.Point(238, 325);
+            this.btnModificarBarrio.Image = global::PavTpGrupo11.Properties.Resources.editar;
+            this.btnModificarBarrio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarBarrio.Location = new System.Drawing.Point(212, 339);
             this.btnModificarBarrio.Name = "btnModificarBarrio";
             this.btnModificarBarrio.Size = new System.Drawing.Size(122, 31);
             this.btnModificarBarrio.TabIndex = 2;
             this.btnModificarBarrio.Text = "Modificar";
             this.btnModificarBarrio.UseVisualStyleBackColor = true;
+            this.btnModificarBarrio.Click += new System.EventHandler(this.btnModificarBarrio_Click);
             // 
             // btnElimarB
             // 
-            this.btnElimarB.Location = new System.Drawing.Point(386, 312);
+            this.btnElimarB.Image = global::PavTpGrupo11.Properties.Resources.boton_eliminar;
+            this.btnElimarB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnElimarB.Location = new System.Drawing.Point(360, 339);
             this.btnElimarB.Name = "btnElimarB";
             this.btnElimarB.Size = new System.Drawing.Size(122, 31);
             this.btnElimarB.TabIndex = 3;
@@ -80,14 +89,14 @@ namespace PavTpGrupo11.Formularios
             // 
             // TxtIDBarrio
             // 
-            this.TxtIDBarrio.Location = new System.Drawing.Point(344, 74);
+            this.TxtIDBarrio.Location = new System.Drawing.Point(318, 73);
             this.TxtIDBarrio.Name = "TxtIDBarrio";
             this.TxtIDBarrio.Size = new System.Drawing.Size(164, 20);
             this.TxtIDBarrio.TabIndex = 4;
             // 
             // txtNombreB
             // 
-            this.txtNombreB.Location = new System.Drawing.Point(344, 117);
+            this.txtNombreB.Location = new System.Drawing.Point(330, 120);
             this.txtNombreB.Name = "txtNombreB";
             this.txtNombreB.Size = new System.Drawing.Size(164, 20);
             this.txtNombreB.TabIndex = 5;
@@ -95,14 +104,37 @@ namespace PavTpGrupo11.Formularios
             // GrillaBarrio
             // 
             this.GrillaBarrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaBarrio.Location = new System.Drawing.Point(78, 181);
+            this.GrillaBarrio.Location = new System.Drawing.Point(12, 186);
             this.GrillaBarrio.Name = "GrillaBarrio";
-            this.GrillaBarrio.Size = new System.Drawing.Size(282, 113);
+            this.GrillaBarrio.Size = new System.Drawing.Size(384, 134);
             this.GrillaBarrio.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(228, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "ID barrio:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(221, 120);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Nombre Barrio:";
             // 
             // ABM_BARRIOS
             // 
-            this.ClientSize = new System.Drawing.Size(704, 406);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(529, 435);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.GrillaBarrio);
             this.Controls.Add(this.txtNombreB);
             this.Controls.Add(this.TxtIDBarrio);
@@ -138,5 +170,7 @@ namespace PavTpGrupo11.Formularios
         private System.Windows.Forms.TextBox TxtIDBarrio;
         private System.Windows.Forms.TextBox txtNombreB;
         private System.Windows.Forms.DataGridView GrillaBarrio;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

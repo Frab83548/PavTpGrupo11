@@ -65,8 +65,8 @@ namespace PavTpGrupo11
 
         private void registrarBarrioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ABM_BARRIOS venatana = new ABM_BARRIOS();
-            venatana.Show();
+            ABM_BARRIOS ventana = new ABM_BARRIOS();
+            ventana.Show();
         }
     }
 }

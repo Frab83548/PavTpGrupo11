@@ -69,7 +69,7 @@ namespace PavTpGrupo11.AccesoADatos
         {
             int flag = 0;
             conexion.Open();
-            string query = "UPDATE Empleados SET Nombre = '" + nom + "' Telefono =  '" + tel + "' Documento = '" + doc + "' calle =  '" + calle + "' nro_calle =  '" + nro + "' id_barrio = '" + barrio + "' where Cod_Empleado = '" + cod + "'";
+            string query = "UPDATE Empleados SET Nombre = '" + nom + "' Telefono =  '" + tel + "' Documento = '" + doc + "' calle =  '" + calle + "' nro_calle =  '" + nro + "' id_barrio = '" + barrio + "' WHERE Cod_Empleado = '" + cod + "'";
 
             SqlCommand cmd = new SqlCommand(query, conexion);
             flag = cmd.ExecuteNonQuery();
@@ -110,7 +110,7 @@ namespace PavTpGrupo11.AccesoADatos
         public bool ModificarBarrio( string dni, string nom)
 
         {
-            bool flag = false;
+            bool resultado = false;
             try
             {
                 conexion.Open();
@@ -118,8 +118,8 @@ namespace PavTpGrupo11.AccesoADatos
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.ExecuteNonQuery();
-                
-                flag = true;
+
+                resultado = true;
             }
             catch (Exception)
             {
@@ -131,7 +131,7 @@ namespace PavTpGrupo11.AccesoADatos
                 conexion.Close();
             }
             
-            return flag;
+            return resultado;
 
 
         }
