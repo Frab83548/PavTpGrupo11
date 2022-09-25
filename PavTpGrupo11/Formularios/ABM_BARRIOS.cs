@@ -121,6 +121,34 @@ private void ABM_BARRIOS_Load_1(object sender, EventArgs e)
 
             GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
         }
+
+        private void btnElimarB_Click(object sender, EventArgs e)
+        {
+            if (TxtIDBarrio.Text.Equals("") )
+            {
+                MessageBox.Show("Debe ingresar todos los campos obligatorios para dar de alta al empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+               
+            
+              int resultado = cn.EliminarBarrio(TxtIDBarrio.Text);
+              if (resultado > 0 )
+                 {
+                        MessageBox.Show("Se ha eliminado el barrio", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                 }
+               else
+                 {
+                        MessageBox.Show("Ese barrio no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 }
+               
+            }
+
+            GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
+            
+
+        }
     }
 
   

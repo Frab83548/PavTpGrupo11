@@ -69,7 +69,7 @@ namespace PavTpGrupo11.AccesoADatos
         {
             int flag = 0;
             conexion.Open();
-            string query = "UPDATE Empleados SET Nombre = '" + nom + "' Telefono =  '" + tel + "' Documento = '" + doc + "' calle =  '" + calle + "' nro_calle =  '" + nro + "' id_barrio = '" + barrio + "' WHERE Cod_Empleado = '" + cod + "'";
+            string query = "UPDATE Empleados SET Nombre = '" + nom + "', Telefono = '" + tel + "', Documento = '" + doc + "', calle =  '" + calle + "', nro_calle =  '" + nro + "', id_barrio = '" + barrio + "' WHERE Cod_Empleado = '" + cod + "'";
 
             SqlCommand cmd = new SqlCommand(query, conexion);
             flag = cmd.ExecuteNonQuery();
@@ -139,13 +139,29 @@ namespace PavTpGrupo11.AccesoADatos
 
         {
             int flag = 0;
-            conexion.Open();
-            string query = "DELETE FROM Barrios WHERE id_barrio = '" + id + "'";
 
-            SqlCommand cmd = new SqlCommand(query, conexion);
-            flag = cmd.ExecuteNonQuery();
-            conexion.Close();
-            return flag;
+            try
+            {
+                conexion.Open();
+                string query = "DELETE FROM Barrios WHERE id_barrio = '" + id + "'";
+
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                flag = cmd.ExecuteNonQuery();
+                return flag;
+                 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            finally
+            {
+                conexion.Close();
+            }
+            
+           
 
 
         }

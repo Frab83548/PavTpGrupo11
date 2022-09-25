@@ -86,6 +86,7 @@ namespace PavTpGrupo11.Formularios
             this.btnElimarB.TabIndex = 3;
             this.btnElimarB.Text = "Eliminar";
             this.btnElimarB.UseVisualStyleBackColor = true;
+            this.btnElimarB.Click += new System.EventHandler(this.btnElimarB_Click);
             // 
             // TxtIDBarrio
             // 
