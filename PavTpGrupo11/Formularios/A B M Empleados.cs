@@ -30,32 +30,132 @@ namespace PavTpGrupo11.Formularios
         }
 
 
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
+            if (txtCodigoEMPLEADO.Text.Equals("") || txtBarrio.Text.Equals("") || txtCalle.Text.Equals("") || txtCalleNRO.Text.Equals("") || txttelefonoE.Text.Equals("") ||
+                txtDocumento.Text.Equals("") || txtNombre.Text.Equals(""))
+            {
+                MessageBox.Show("Debe completar todos los campos correspondientes para dar el alta al empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            cn.InsertarUsuario(txtCodigoEMPLEADO.Text, txtNombre.Text, txttelefonoE.Text,txtDocumento.Text,txtCalle.Text,txtCalleNRO.Text,txtBarrio.Text);
-            GrillaEmpleados.DataSource =  cn.ConsultarUsuariosDG();
-           
+            }
+            else
+            {
+                try
+                {
+                    int resultado = cn.InsertarUsuario(txtCodigoEMPLEADO.Text, txtNombre.Text, txttelefonoE.Text, txtDocumento.Text, txtCalle.Text, txtCalleNRO.Text, txtBarrio.Text);
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Se ha dado de alta el empleado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un problema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+
+                GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+            }
+            
+            GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            cn.EliminarEmpleado(txtCodigoEMPLEADO.Text);
+            if (txtCodigoEMPLEADO.Text.Equals(""))
+            {
+                MessageBox.Show("Debe ingresar el codigo del empleado que desee elimanr", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                try
+                {
+                    int resultado = cn.EliminarEmpleado(txtCodigoEMPLEADO.Text);
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Se ha eliminado el empleado seleccionado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ese empleado no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+
+
+
+            }
             GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
 
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            cn.ModificarEmpleado(txtCodigoEMPLEADO.Text, txtNombre.Text, txttelefonoE.Text, txtDocumento.Text, txtCalle.Text, txtCalleNRO.Text, txtBarrio.Text);
-            GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+            if (txtCodigoEMPLEADO.Text.Equals("") || txtBarrio.Text.Equals("") || txtCalle.Text.Equals("") || txtCalleNRO.Text.Equals("") || txttelefonoE.Text.Equals("") ||
+                txtDocumento.Text.Equals("") || txtNombre.Text.Equals(""))
+            {
+                MessageBox.Show("Debe completar todos los campos correspondientes para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                try
+                {
+                    int resultado = cn.ModificarEmpleado(txtCodigoEMPLEADO.Text, txtNombre.Text, txttelefonoE.Text, txtDocumento.Text, txtCalle.Text, txtCalleNRO.Text, txtBarrio.Text);
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Se ha modificado el empleado seleccionado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ese empleado no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+
+
+                GrillaEmpleados.DataSource = cn.ConsultarUsuariosDG();
+            }
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+            private void btnSalir_Click(object sender, EventArgs e)
+            {
+                this.Hide();
+            }
+
+            private void BtnLimpiarCampos_Click(object sender, EventArgs e)
+            {
+                txtNombre.Text = "";
+                txtBarrio.Text = "";
+                txtCalleNRO.Text = "";
+                txtCodigoEMPLEADO.Text = "";
+                txttelefonoE.Text = "";
+                txtDocumento.Text = "";
+                txtCalle.Text = "";
+            }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            this.Hide();
+
         }
     }
-        }
+    }
+
     

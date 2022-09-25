@@ -47,7 +47,7 @@ namespace PavTpGrupo11.AccesoADatos
             return cn.InsertarBarrio(id, nom);
         }
 
-        public bool ModificarBarrio(string dni, string nom)
+        public int ModificarBarrio(string dni, string nom)
         {
             return cn.ModificarBarrio(dni, nom);
         }

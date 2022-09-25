@@ -106,16 +106,20 @@ private void ABM_BARRIOS_Load_1(object sender, EventArgs e)
             {
                 try
                 {
-                    bool resultado = cn.ModificarBarrio(TxtIDBarrio.Text, txtNombreB.Text);
-                    if (resultado)
+                    int resultado = cn.ModificarBarrio(TxtIDBarrio.Text, txtNombreB.Text);
+                    if (resultado > 0)
                     {
                         MessageBox.Show("Se ha modificado el barrio", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ese barrio no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    
-                    MessageBox.Show("Ese barrio no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    throw;
                 }
             }
 
@@ -126,27 +130,45 @@ private void ABM_BARRIOS_Load_1(object sender, EventArgs e)
         {
             if (TxtIDBarrio.Text.Equals("") )
             {
-                MessageBox.Show("Debe ingresar todos los campos obligatorios para dar de alta al empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar todos los campos obligatorios para dar de alta al Barrio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
             {
-               
-            
-              int resultado = cn.EliminarBarrio(TxtIDBarrio.Text);
-              if (resultado > 0 )
-                 {
+                try
+                {
+                    int resultado = cn.EliminarBarrio(TxtIDBarrio.Text);
+                    if (resultado > 0)
+                    {
                         MessageBox.Show("Se ha eliminado el barrio", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                 }
-               else
-                 {
+                    }
+                    else
+                    {
                         MessageBox.Show("Ese barrio no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 }
+                    }
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            
+              
                
             }
 
             GrillaBarrio.DataSource = cn.ConsultarBarriosDG();
             
+
+        }
+
+        private void btnSalirB_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void TxtIDBarrio_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

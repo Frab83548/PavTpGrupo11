@@ -38,6 +38,7 @@ namespace PavTpGrupo11.Formularios
             this.GrillaBarrio = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSalirB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBarrio)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +48,7 @@ namespace PavTpGrupo11.Formularios
             this.pictureBox2.Image = global::PavTpGrupo11.Properties.Resources.barrio;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(201, 152);
+            this.pictureBox2.Size = new System.Drawing.Size(152, 127);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -56,10 +57,10 @@ namespace PavTpGrupo11.Formularios
             // 
             this.BtnAgregarB.Image = global::PavTpGrupo11.Properties.Resources.agregar_usuario;
             this.BtnAgregarB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAgregarB.Location = new System.Drawing.Point(45, 339);
+            this.BtnAgregarB.Location = new System.Drawing.Point(12, 339);
             this.BtnAgregarB.Name = "BtnAgregarB";
-            this.BtnAgregarB.Size = new System.Drawing.Size(122, 31);
-            this.BtnAgregarB.TabIndex = 1;
+            this.BtnAgregarB.Size = new System.Drawing.Size(87, 31);
+            this.BtnAgregarB.TabIndex = 4;
             this.BtnAgregarB.Text = "Agregar";
             this.BtnAgregarB.UseVisualStyleBackColor = true;
             this.BtnAgregarB.Click += new System.EventHandler(this.button1_Click_1);
@@ -68,9 +69,9 @@ namespace PavTpGrupo11.Formularios
             // 
             this.btnModificarBarrio.Image = global::PavTpGrupo11.Properties.Resources.editar;
             this.btnModificarBarrio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarBarrio.Location = new System.Drawing.Point(212, 339);
+            this.btnModificarBarrio.Location = new System.Drawing.Point(115, 339);
             this.btnModificarBarrio.Name = "btnModificarBarrio";
-            this.btnModificarBarrio.Size = new System.Drawing.Size(122, 31);
+            this.btnModificarBarrio.Size = new System.Drawing.Size(87, 31);
             this.btnModificarBarrio.TabIndex = 2;
             this.btnModificarBarrio.Text = "Modificar";
             this.btnModificarBarrio.UseVisualStyleBackColor = true;
@@ -80,9 +81,9 @@ namespace PavTpGrupo11.Formularios
             // 
             this.btnElimarB.Image = global::PavTpGrupo11.Properties.Resources.boton_eliminar;
             this.btnElimarB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnElimarB.Location = new System.Drawing.Point(360, 339);
+            this.btnElimarB.Location = new System.Drawing.Point(224, 339);
             this.btnElimarB.Name = "btnElimarB";
-            this.btnElimarB.Size = new System.Drawing.Size(122, 31);
+            this.btnElimarB.Size = new System.Drawing.Size(87, 31);
             this.btnElimarB.TabIndex = 3;
             this.btnElimarB.Text = "Eliminar";
             this.btnElimarB.UseVisualStyleBackColor = true;
@@ -90,31 +91,32 @@ namespace PavTpGrupo11.Formularios
             // 
             // TxtIDBarrio
             // 
-            this.TxtIDBarrio.Location = new System.Drawing.Point(318, 73);
+            this.TxtIDBarrio.Location = new System.Drawing.Point(280, 57);
             this.TxtIDBarrio.Name = "TxtIDBarrio";
-            this.TxtIDBarrio.Size = new System.Drawing.Size(164, 20);
-            this.TxtIDBarrio.TabIndex = 4;
+            this.TxtIDBarrio.Size = new System.Drawing.Size(99, 20);
+            this.TxtIDBarrio.TabIndex = 1;
+            this.TxtIDBarrio.TextChanged += new System.EventHandler(this.TxtIDBarrio_TextChanged);
             // 
             // txtNombreB
             // 
-            this.txtNombreB.Location = new System.Drawing.Point(330, 120);
+            this.txtNombreB.Location = new System.Drawing.Point(280, 103);
             this.txtNombreB.Name = "txtNombreB";
-            this.txtNombreB.Size = new System.Drawing.Size(164, 20);
-            this.txtNombreB.TabIndex = 5;
+            this.txtNombreB.Size = new System.Drawing.Size(99, 20);
+            this.txtNombreB.TabIndex = 2;
             // 
             // GrillaBarrio
             // 
             this.GrillaBarrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaBarrio.Location = new System.Drawing.Point(12, 186);
+            this.GrillaBarrio.Location = new System.Drawing.Point(54, 182);
             this.GrillaBarrio.Name = "GrillaBarrio";
-            this.GrillaBarrio.Size = new System.Drawing.Size(384, 134);
+            this.GrillaBarrio.Size = new System.Drawing.Size(228, 140);
             this.GrillaBarrio.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(228, 74);
+            this.label3.Location = new System.Drawing.Point(190, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 16);
             this.label3.TabIndex = 7;
@@ -124,16 +126,27 @@ namespace PavTpGrupo11.Formularios
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(221, 120);
+            this.label4.Location = new System.Drawing.Point(183, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Nombre Barrio:";
             // 
+            // btnSalirB
+            // 
+            this.btnSalirB.Location = new System.Drawing.Point(304, 389);
+            this.btnSalirB.Name = "btnSalirB";
+            this.btnSalirB.Size = new System.Drawing.Size(75, 23);
+            this.btnSalirB.TabIndex = 9;
+            this.btnSalirB.Text = "salir";
+            this.btnSalirB.UseVisualStyleBackColor = true;
+            this.btnSalirB.Click += new System.EventHandler(this.btnSalirB_Click);
+            // 
             // ABM_BARRIOS
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(529, 435);
+            this.ClientSize = new System.Drawing.Size(412, 430);
+            this.Controls.Add(this.btnSalirB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GrillaBarrio);
@@ -144,6 +157,7 @@ namespace PavTpGrupo11.Formularios
             this.Controls.Add(this.BtnAgregarB);
             this.Controls.Add(this.pictureBox2);
             this.Name = "ABM_BARRIOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ABM_BARRIOS_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaBarrio)).EndInit();
@@ -173,5 +187,6 @@ namespace PavTpGrupo11.Formularios
         private System.Windows.Forms.DataGridView GrillaBarrio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSalirB;
     }
 }

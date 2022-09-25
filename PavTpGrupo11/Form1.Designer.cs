@@ -33,9 +33,8 @@ namespace PavTpGrupo11
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.proveedorerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarEmpleadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarEmpleadoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarEmpleadoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.barriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarBarrioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +46,6 @@ namespace PavTpGrupo11
             this.respuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.barriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarBarrioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,10 +64,7 @@ namespace PavTpGrupo11
             // proveedorerToolStripMenuItem
             // 
             this.proveedorerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarEmpleadoToolStripMenuItem,
-            this.registrarEmpleadoToolStripMenuItem1,
-            this.registrarEmpleadoToolStripMenuItem2,
-            this.registrarEmpleadoToolStripMenuItem3});
+            this.registrarEmpleadoToolStripMenuItem});
             this.proveedorerToolStripMenuItem.Name = "proveedorerToolStripMenuItem";
             this.proveedorerToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.proveedorerToolStripMenuItem.Text = "Empleados";
@@ -79,29 +73,24 @@ namespace PavTpGrupo11
             // registrarEmpleadoToolStripMenuItem
             // 
             this.registrarEmpleadoToolStripMenuItem.Name = "registrarEmpleadoToolStripMenuItem";
-            this.registrarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.registrarEmpleadoToolStripMenuItem.Text = "Registrar empleado";
+            this.registrarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarEmpleadoToolStripMenuItem.Text = "ABM empleado";
             this.registrarEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.registrarEmpleadoToolStripMenuItem_Click);
             // 
-            // registrarEmpleadoToolStripMenuItem1
+            // barriosToolStripMenuItem
             // 
-            this.registrarEmpleadoToolStripMenuItem1.Name = "registrarEmpleadoToolStripMenuItem1";
-            this.registrarEmpleadoToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
-            this.registrarEmpleadoToolStripMenuItem1.Text = "Consultar empleado";
-            this.registrarEmpleadoToolStripMenuItem1.Click += new System.EventHandler(this.registrarEmpleadoToolStripMenuItem1_Click);
+            this.barriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarBarrioToolStripMenuItem});
+            this.barriosToolStripMenuItem.Name = "barriosToolStripMenuItem";
+            this.barriosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.barriosToolStripMenuItem.Text = "Barrios";
             // 
-            // registrarEmpleadoToolStripMenuItem2
+            // registrarBarrioToolStripMenuItem
             // 
-            this.registrarEmpleadoToolStripMenuItem2.Name = "registrarEmpleadoToolStripMenuItem2";
-            this.registrarEmpleadoToolStripMenuItem2.Size = new System.Drawing.Size(181, 22);
-            this.registrarEmpleadoToolStripMenuItem2.Text = "Modificar empleado";
-            // 
-            // registrarEmpleadoToolStripMenuItem3
-            // 
-            this.registrarEmpleadoToolStripMenuItem3.Name = "registrarEmpleadoToolStripMenuItem3";
-            this.registrarEmpleadoToolStripMenuItem3.Size = new System.Drawing.Size(181, 22);
-            this.registrarEmpleadoToolStripMenuItem3.Text = "Dar baja empleado";
-            this.registrarEmpleadoToolStripMenuItem3.Click += new System.EventHandler(this.registrarEmpleadoToolStripMenuItem3_Click);
+            this.registrarBarrioToolStripMenuItem.Name = "registrarBarrioToolStripMenuItem";
+            this.registrarBarrioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarBarrioToolStripMenuItem.Text = "ABM barrio";
+            this.registrarBarrioToolStripMenuItem.Click += new System.EventHandler(this.registrarBarrioToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -183,21 +172,6 @@ namespace PavTpGrupo11
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // barriosToolStripMenuItem
-            // 
-            this.barriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarBarrioToolStripMenuItem});
-            this.barriosToolStripMenuItem.Name = "barriosToolStripMenuItem";
-            this.barriosToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.barriosToolStripMenuItem.Text = "Barrios";
-            // 
-            // registrarBarrioToolStripMenuItem
-            // 
-            this.registrarBarrioToolStripMenuItem.Name = "registrarBarrioToolStripMenuItem";
-            this.registrarBarrioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarBarrioToolStripMenuItem.Text = "Registrar Barrio";
-            this.registrarBarrioToolStripMenuItem.Click += new System.EventHandler(this.registrarBarrioToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,9 +210,6 @@ namespace PavTpGrupo11
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ToolStripMenuItem proveedorerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarEmpleadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarEmpleadoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem registrarEmpleadoToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem registrarEmpleadoToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem barriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarBarrioToolStripMenuItem;
     }

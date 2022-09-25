@@ -55,6 +55,7 @@ namespace PavTpGrupo11.AccesoADatos
         }
         public int  EliminarEmpleado(string cod)
         {
+
             int flag = 0;
             conexion.Open();
             string query = "DELETE FROM Empleados WHERE Cod_Empleado = '" + cod + "'";
@@ -107,19 +108,19 @@ namespace PavTpGrupo11.AccesoADatos
             return resultado;
         }
 
-        public bool ModificarBarrio( string dni, string nom)
+        public int ModificarBarrio( string dni, string nom)
 
         {
-            bool resultado = false;
+            int resultado = 0;
             try
             {
                 conexion.Open();
                 string query = "UPDATE Barrios SET nombre_barrio = '" + nom + "' where id_barrio = '" + dni + "'";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.ExecuteNonQuery();
+                resultado =cmd.ExecuteNonQuery();
 
-                resultado = true;
+                return resultado;
             }
             catch (Exception)
             {
@@ -131,7 +132,7 @@ namespace PavTpGrupo11.AccesoADatos
                 conexion.Close();
             }
             
-            return resultado;
+          
 
 
         }

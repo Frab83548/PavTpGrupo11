@@ -59,14 +59,15 @@ namespace PavTpGrupo11.Formularios
             this.txtCodigoEMPLEADO.Location = new System.Drawing.Point(415, 100);
             this.txtCodigoEMPLEADO.Name = "txtCodigoEMPLEADO";
             this.txtCodigoEMPLEADO.Size = new System.Drawing.Size(155, 20);
-            this.txtCodigoEMPLEADO.TabIndex = 17;
+            this.txtCodigoEMPLEADO.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(415, 74);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(155, 20);
-            this.txtNombre.TabIndex = 15;
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // label3
             // 
@@ -102,35 +103,35 @@ namespace PavTpGrupo11.Formularios
             this.txtDocumento.Location = new System.Drawing.Point(415, 233);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(155, 20);
-            this.txtDocumento.TabIndex = 36;
+            this.txtDocumento.TabIndex = 7;
             // 
             // txtBarrio
             // 
             this.txtBarrio.Location = new System.Drawing.Point(415, 207);
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.Size = new System.Drawing.Size(155, 20);
-            this.txtBarrio.TabIndex = 35;
+            this.txtBarrio.TabIndex = 6;
             // 
             // txtCalle
             // 
             this.txtCalle.Location = new System.Drawing.Point(415, 181);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(155, 20);
-            this.txtCalle.TabIndex = 34;
+            this.txtCalle.TabIndex = 5;
             // 
             // txtCalleNRO
             // 
             this.txtCalleNRO.Location = new System.Drawing.Point(415, 155);
             this.txtCalleNRO.Name = "txtCalleNRO";
             this.txtCalleNRO.Size = new System.Drawing.Size(155, 20);
-            this.txtCalleNRO.TabIndex = 33;
+            this.txtCalleNRO.TabIndex = 4;
             // 
             // txttelefonoE
             // 
             this.txttelefonoE.Location = new System.Drawing.Point(415, 128);
             this.txttelefonoE.Name = "txttelefonoE";
             this.txttelefonoE.Size = new System.Drawing.Size(155, 20);
-            this.txttelefonoE.TabIndex = 32;
+            this.txttelefonoE.TabIndex = 3;
             // 
             // label9
             // 
@@ -194,12 +195,13 @@ namespace PavTpGrupo11.Formularios
             // 
             // BtnLimpiarCampos
             // 
-            this.BtnLimpiarCampos.Location = new System.Drawing.Point(675, 247);
+            this.BtnLimpiarCampos.Location = new System.Drawing.Point(665, 252);
             this.BtnLimpiarCampos.Name = "BtnLimpiarCampos";
             this.BtnLimpiarCampos.Size = new System.Drawing.Size(118, 32);
             this.BtnLimpiarCampos.TabIndex = 42;
             this.BtnLimpiarCampos.Text = "Limpiar campos";
             this.BtnLimpiarCampos.UseVisualStyleBackColor = true;
+            this.BtnLimpiarCampos.Click += new System.EventHandler(this.BtnLimpiarCampos_Click);
             // 
             // pictureBox1
             // 
@@ -276,6 +278,7 @@ namespace PavTpGrupo11.Formularios
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "frmABM_EMPLEADOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A_B_M_Empleados";
             this.Load += new System.EventHandler(this.frmABM_EMPLEADOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaEmpleados)).EndInit();
