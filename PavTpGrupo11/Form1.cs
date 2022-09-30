@@ -74,5 +74,11 @@ namespace PavTpGrupo11
             ABM_Materiales ventana = new ABM_Materiales();
             ventana.Show();
         }
+
+        private void aBMCamionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Camiones ventana = new ABM_Camiones();
+            ventana.Show();
+        }
     }
 }

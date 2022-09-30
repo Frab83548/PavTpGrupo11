@@ -75,6 +75,28 @@ namespace PavTpGrupo11.AccesoADatos
 
 
         }
+        public DataTable ConsultarCamiones()
+        {
+            string query = "SELECT * FROM Camiones";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            data.Fill(table);
+
+            return table;
+        }
+        public DataTable ConsultarMarcaCamiones()
+        {
+            string query = "SELECT * FROM Marcas_camion";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+
+
+        }
         public int InsertarUsuario(string cod, string nom, string tel, string doc, string calle, string nro, string barrio)
 
         {
@@ -238,7 +260,7 @@ namespace PavTpGrupo11.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE MAteriales SET Cantidad = @cant, Cod_Unidad_Medida=@codUni, Cod_Proveedor=@codProv, precio=@precio WHERE Codigo_Material like @cod";
+                string consulta = "UPDATE Materiales SET Cantidad = @cant, Cod_Unidad_Medida=@codUni, Cod_Proveedor=@codProv, precio=@precio WHERE Codigo_Material like @cod";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@cod", mate.codigo_material);
                 cmd.Parameters.AddWithValue("@cant", mate.cantidad);

@@ -149,5 +149,15 @@ namespace PavTpGrupo11.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transporte_de_camiones_con_materiales_de_construccion {
+            get {
+                object obj = ResourceManager.GetObject("transporte-de-camiones-con-materiales-de-construccion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

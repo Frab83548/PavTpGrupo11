@@ -296,7 +296,7 @@ namespace PavTpGrupo11.Formularios
             bool resultado=false;
             for (int i = 0; i < grillaMateriales.Rows.Count; i++)
             {
-                if (grillaMateriales.Rows[i].Cells["Codigo_Material"].Value.Equals(codigo))
+                if (grillaMateriales.Rows[i].Cells["Codigo_Material"].Value.Equals(codigo.ToString()))
                 {
                     resultado=true;
                     break;
