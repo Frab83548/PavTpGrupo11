@@ -68,5 +68,18 @@ namespace PavTpGrupo11
             ABM_BARRIOS ventana = new ABM_BARRIOS();
             ventana.Show();
         }
+
+        private void aBMProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Proveedores ventana = new ABM_Proveedores();
+            ventana.Show();
+        }
+
+        private void aBMObrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Obra ventana  = new ABM_Obra();
+            ventana.Show();
+
+        }
     }
 }

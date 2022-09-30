@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoADatos\AD_EMPLEADOS.cs" />
+    <Compile Include="AccesoADatos\AD_Obras.cs" />
+    <Compile Include="AccesoADatos\AD_Proveedores.cs" />
     <Compile Include="AccesoADatos\ConexionSQL.cs" />
     <Compile Include="Entidades\Barrio.cs" />
     <Compile Include="Entidades\Camion.cs" />
@@ -80,6 +82,19 @@
     <Compile Include="Formularios\ABM_BARRIOS.Designer.cs">
       <DependentUpon>ABM_BARRIOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ABM_Obra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM_Obra.Designer.cs">
+      <DependentUpon>ABM_Obra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM_Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM_Proveedores.Designer.cs">
+      <DependentUpon>ABM_Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProveedores.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -90,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM_BARRIOS.resx">
       <DependentUpon>ABM_BARRIOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM_Obra.resx">
+      <DependentUpon>ABM_Obra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM_Proveedores.resx">
+      <DependentUpon>ABM_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -137,6 +158,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\barrio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedor-hotelero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pared-de-ladrillo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

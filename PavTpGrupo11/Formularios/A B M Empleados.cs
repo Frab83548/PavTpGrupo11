@@ -71,7 +71,7 @@ namespace PavTpGrupo11.Formularios
         {
             if (txtCodigoEMPLEADO.Text.Equals(""))
             {
-                MessageBox.Show("Debe ingresar el codigo del empleado que desee elimanr", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar el codigo del empleado que desee elimanar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else

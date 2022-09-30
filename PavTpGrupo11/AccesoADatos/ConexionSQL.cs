@@ -166,7 +166,108 @@ namespace PavTpGrupo11.AccesoADatos
 
 
         }
+        // proveedores david
+        public DataTable ConsultarProveedoresDG()
+        {
+            string query = "SELECT * FROM Proveedor";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
 
+            return tabla;
+        }
+
+        public int InsertarProveedor(string cod, string nom, string tel, string mail, string calle, string nro, string barrio)
+
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "insert into Proveedor(Cod_Proveedor, Nombre, Telefono, Mail, Calle, nro_Calle, id_barrio) values('" + cod + "', '" + nom + "', '" + tel + "', '" + mail + "', '" + calle + "', '" + nro + "', '" + barrio + "')";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+        }
+
+        public int ModificarProveedor(string cod, string nom, string tel, string mail, string calle, string nro, string barrio)
+
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "UPDATE Proveedor SET Nombre = '" + nom + "', Telefono = '" + tel + "', Mail = '" + mail + "', Calle =  '" + calle + "', nro_calle =  '" + nro + "', id_barrio = '" + barrio + "' WHERE Cod_Proveedor = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+
+        }
+        public int EliminarProveedor(string cod)
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "DELETE FROM Proveedor WHERE Cod_Proveedor = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+        }
+        // Obra david
+        public DataTable ConsultarObrasDG()
+        {
+            string query = "SELECT * FROM Obras";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
+        public int InsertarObra(string cod, string nomObra, string calle, string nro, string barrio)
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "insert into Obras(codigo_obra, nombre_Obra, calle, nro_Calle, id_barrio) values('" + cod + "','" + nomObra + "', '" + calle + "', '" + nro + "', '" + barrio + "')";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+        }
+
+        public int ModificarObra(string cod, string nomObra, string calle, string nro, string barrio)
+
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "UPDATE Obras SET nombre_Obra = '" + nomObra + "', Calle =  '" + calle + "', nro_calle =  '" + nro + "', id_barrio = '" + barrio + "' WHERE codigo_Obra = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+
+        }
+        public int EliminarObra(string cod)
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "DELETE FROM Obras WHERE codigo_Obra = '" + cod + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+        }
 
     }
+
 }
