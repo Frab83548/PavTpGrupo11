@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoADatos\AD-Camion.cs" />
     <Compile Include="AccesoADatos\AD_EMPLEADOS.cs" />
     <Compile Include="AccesoADatos\AD_Obras.cs" />
     <Compile Include="AccesoADatos\AD_Proveedores.cs" />
@@ -76,6 +77,18 @@
     <Compile Include="Formularios\A B M Empleados.Designer.cs">
       <DependentUpon>A B M Empleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ABM materialescs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM materialescs.Designer.cs">
+      <DependentUpon>ABM materialescs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM-Camiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM-Camiones.Designer.cs">
+      <DependentUpon>ABM-Camiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ABM_BARRIOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\A B M Empleados.resx">
       <DependentUpon>A B M Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM materialescs.resx">
+      <DependentUpon>ABM materialescs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM-Camiones.resx">
+      <DependentUpon>ABM-Camiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM_BARRIOS.resx">
       <DependentUpon>ABM_BARRIOS.cs</DependentUpon>
@@ -167,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pared-de-ladrillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transporte-de-camiones-con-materiales-de-construccion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\construccion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -268,6 +268,60 @@ namespace PavTpGrupo11.AccesoADatos
             return flag;
         }
 
+
+        public DataTable ObtenerCamiones()
+        {
+            string query = "SELECT * FROM Camiones";
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            data.Fill(tabla);
+
+            return tabla;
+        }
+
+        public int InsertarCamion(string patente, string marca, string mod, string cap)
+
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "insert into Camiones(Patente, Marca_Camión, Año_Modelo, Capacidad ) values('" + patente + "', '" + marca + "', '" + mod + "', '" + cap + "')";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+
+        }
+        public int eliminarCamion(string patente)
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "DELETE FROM Camiones WHERE Patente = '" + patente + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+        }
+
+        public int ModificarCamion(string patente, string marca, string mod, string cap)
+
+        {
+            int flag = 0;
+            conexion.Open();
+            string query = "UPDATE Camiones SET Marca_Camión = '" + marca + "', Año_Modelo =  '" + mod + "', Capacidad =  '" + cap + "' WHERE Patente = '" + patente + "'";
+
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            flag = cmd.ExecuteNonQuery();
+            conexion.Close();
+            return flag;
+
+
+        }
+
+
     }
 
 }

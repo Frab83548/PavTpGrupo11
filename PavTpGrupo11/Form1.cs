@@ -81,5 +81,11 @@ namespace PavTpGrupo11
             ventana.Show();
 
         }
+
+        private void aBMCamionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABM_Camiones ventana = new ABM_Camiones();
+            ventana.Show();
+        }
     }
 }
